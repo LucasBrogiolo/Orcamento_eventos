@@ -122,7 +122,7 @@ ttk.Label(mainframe, text="RESULTADO:").grid(
     column=1, row=16, sticky=W)
 
 meters = IntVar()
-ttk.Label(mainframe, textvariable=meters).grid(
+ttk.Label(mainframe, textvariable=meters, foreground="green").grid(
     column=1, row=17, sticky=(W, E))
 
 for child in mainframe.winfo_children(): 
