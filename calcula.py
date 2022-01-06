@@ -21,7 +21,7 @@ class CalculadorCache:
 
 #     trampo1_musicos = Cache(4, 220, 80)
 #     trampo1_producao = Producao(0.0, 0.2, 0.2)
-#     trampo1_som = Som(0, 0, 0, 0, 0)
+#     trampo1_som = Som(0, 0, 0, 0, 0, 1)
 #     total = CalculadorCache()
 #     resultado = total.calcula(trampo1_musicos, trampo1_producao, 0)
 #     print(resultado)
