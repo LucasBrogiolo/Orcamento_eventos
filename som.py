@@ -1,11 +1,11 @@
 class Som:
     def __init__(self, pa, retorno, microfones, cabos, km_distancia, tecnico=0):
-        self.pa = pa
-        self.retorno = retorno
-        self.microfones = microfones
-        self.cabos = cabos
-        self.km_distancia = km_distancia
-        self.tecnico = tecnico
+        self._pa = pa
+        self._retorno = retorno
+        self._microfones = microfones
+        self._cabos = cabos
+        self._km_distancia = km_distancia
+        self._tecnico = tecnico
         self.__total = self.calculo_total()
 
     @property
@@ -21,13 +21,13 @@ class Som:
 
     def calculo_total(self):
         combustivel = self.gastos_combustivel()
-        pa = self.pa * 200
-        retorno = self.retorno * 150
-        if self.microfones:
-            microfones = self.retorno * 50
+        pa = self._pa * 200
+        retorno = self._retorno * 150
+        if self._microfones:
+            microfones = self._retorno * 50
             mesa_som = 150
         else:
             return 0
-        equipe = self.tecnico * 100
+        equipe = self._tecnico * 100
         total = combustivel + pa + retorno + microfones + equipe + mesa_som
         return total
