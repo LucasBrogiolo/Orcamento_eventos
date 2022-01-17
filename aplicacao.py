@@ -127,7 +127,7 @@ def new_window():
     ttk.Entry(mainframe, width=7, textvariable=mic_valor).grid(
         column=4, row=4, sticky=(W, E))
     gerar_tabela("valor Cabo:", 3,5)
-    cabo_valor = DoubleVar(value=100.0)
+    cabo_valor = DoubleVar(value=5.0)
     ttk.Entry(mainframe, width=7, textvariable=cabo_valor).grid(
         column=4, row=5, sticky=(W, E))
     gerar_tabela("valor Técnico:", 3,6)
