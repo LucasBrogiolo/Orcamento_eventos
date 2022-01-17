@@ -12,16 +12,13 @@ def calculate():
     try:
         trampo1_musicos = Cache(quantidade_musicos.get(),
             float(cache_musicos.get()), float(distancia_musicos.get()), configurar)
-
         trampo1_producao = Producao(nota.get(),
             venda.get(), producao.get())
-
         trampo1_som = Som(pa_quantidade.get(), 
             retorno_quantidade.get(), mic.get(), cabos.get(), 
             float(km_som.get()), tecnico_quantidade.get(), configurar)
 
         total = CalculadorCache()
-
         resultado = total.calcula(trampo1_musicos,
             trampo1_producao, trampo1_som)
 

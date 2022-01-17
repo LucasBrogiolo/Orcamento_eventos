@@ -6,10 +6,8 @@ class Cache:
         self.__valor_cache = valor_cache
         self.km_total = km_total
         self._opcoes = opcoes
-
         self.__pedagios = []
         self.__carros = self.numero_carros()
-
 
     def __str__(self) -> str:
         return (f"Quantidade de musicos: {self.__quantidade_musicos}\n"

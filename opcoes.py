@@ -1,4 +1,5 @@
 class Opcoes:
+
     def __init__(self, valor_pa=200, valor_retorno=150,
                  valor_mesa_som=150, valor_mic=50,
                  valor_cabo=5, valor_tecnico=100,

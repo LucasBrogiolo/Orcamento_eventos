@@ -1,5 +1,3 @@
-from opcoes import Opcoes
-
 class Som:
     def __init__(self, pa, retorno, microfones, cabos, km_distancia, tecnico, opcoes):
         self._pa = pa
