@@ -1,3 +1,4 @@
+from re import L
 from tkinter import *
 from tkinter import ttk, messagebox
 from cache_musicos import Cache
@@ -104,44 +105,47 @@ meters = IntVar()
 ttk.Label(mainframe, textvariable=meters, foreground="green").grid(
     column=1, row=17, sticky=(W, E))
 
+ttk.Label(mainframe, text="Versão 0.1.1\ndev.percussa", foreground="grey").grid(
+column=2, row=17, sticky=SE)
+
 # parte das configurações:
 def new_window():
     def gerar_tabela(texto, coluna, linha):
         ttk.Label(mainframe, text=texto).grid(
         column=coluna, row=linha, sticky=W)
-    gerar_tabela("** CONFIGURAÇÕES **", 3,0)
-    gerar_tabela("valor PA:", 3,1)
+    gerar_tabela("** CONFIGURAÇÕES **", 3,1)
+    gerar_tabela("valor PA:", 3,2)
     pa_valor = DoubleVar(value=200.0)
     ttk.Entry(mainframe, width=7, textvariable=pa_valor).grid(
-        column=4, row=1, sticky=(W, E))
-    gerar_tabela("valor retorno:", 3,2)
+        column=4, row=2, sticky=(W, E))
+    gerar_tabela("valor retorno:", 3,3)
     retorno_valor = DoubleVar(value=150.0)
     ttk.Entry(mainframe, width=7, textvariable=retorno_valor).grid(
-        column=4, row=2, sticky=(W, E))
-    gerar_tabela("valor Mesa de Som:", 3,3)
+        column=4, row=3, sticky=(W, E))
+    gerar_tabela("valor Mesa de Som:", 3,4)
     mesa_som_valor = DoubleVar(value=150.0)
     ttk.Entry(mainframe, width=7, textvariable=mesa_som_valor).grid(
-        column=4, row=3, sticky=(W, E))
-    gerar_tabela("valor Microfone: ", 3,4)
+        column=4, row=4, sticky=(W, E))
+    gerar_tabela("valor Microfone: ", 3,5)
     mic_valor = DoubleVar(value=50.0)
     ttk.Entry(mainframe, width=7, textvariable=mic_valor).grid(
-        column=4, row=4, sticky=(W, E))
-    gerar_tabela("valor Cabo:", 3,5)
+        column=4, row=5, sticky=(W, E))
+    gerar_tabela("valor Cabo:", 3,6)
     cabo_valor = DoubleVar(value=5.0)
     ttk.Entry(mainframe, width=7, textvariable=cabo_valor).grid(
-        column=4, row=5, sticky=(W, E))
-    gerar_tabela("valor Técnico:", 3,6)
+        column=4, row=6, sticky=(W, E))
+    gerar_tabela("valor Técnico:", 3,7)
     tecnico_valor = DoubleVar(value=100.0)
     ttk.Entry(mainframe, width=7, textvariable=tecnico_valor).grid(
-        column=4, row=6, sticky=(W, E))
-    gerar_tabela("valor Km/Litro:", 3,7)
+        column=4, row=7, sticky=(W, E))
+    gerar_tabela("valor Km/Litro:", 3,8)
     km_l_valor = DoubleVar(value=6.0)
     ttk.Entry(mainframe, width=7, textvariable=km_l_valor).grid(
-        column=4, row=7, sticky=(W, E))
-    gerar_tabela("valor Alimentação:", 3,8)
+        column=4, row=8, sticky=(W, E))
+    gerar_tabela("valor Alimentação:", 3,9)
     alimentacao_valor = DoubleVar(value=0.0)
     ttk.Entry(mainframe, width=7, textvariable=alimentacao_valor).grid(
-        column=4, row=8, sticky=(W, E))
+        column=4, row=9, sticky=(W, E))
     
     def opcoes():
         global configurar
@@ -156,9 +160,9 @@ def new_window():
         return configurar
 
     ttk.Button(mainframe, text="Salvar", command=opcoes,
-        default="active").grid(column=4, row=9, sticky=W)
+        default="active").grid(column=4, row=10, sticky=W)
 
-ttk.Button(mainframe, text="Configurações", command=new_window).grid(
+ttk.Button(mainframe, text="Config", command=new_window).grid(
     column=2, row=0, sticky=W)
 
 # colocando tudo no lugar:
