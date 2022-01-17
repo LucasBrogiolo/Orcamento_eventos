@@ -6,7 +6,7 @@ class Producao:
 
     def total(self):
         if (self._nota > 1) or (self._venda > 1) or (self._producao > 1):
-            raise ValueError("nota precisa estar entre 0.0 e 0.99")
+            raise ValueError("A nota precisa ter valor entre 0.0 e 0.99")
         else:
             resultado = self._producao + self._venda + self._nota
             return resultado

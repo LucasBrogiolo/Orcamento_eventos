@@ -13,3 +13,15 @@ class CalculadorCache:
                     f"Custo musicos: R$ {cache.total():.2f}\n"
                     f"Custo som: R$ {som.total():.2f}\n"
                     f"Custo produção: R$ {(producao.total()*resultado):.2f}")
+
+# if __name__ == "__main__":
+#     from cache_musicos import Cache
+#     from producao import Producao
+#     from som import Som
+
+#     trampo1_musicos = Cache(4, 220, 80)
+#     trampo1_producao = Producao(0.0, 0.2, 0.2)
+#     trampo1_som = Som(2, 3, 2, 4, 1, 1)
+#     total = CalculadorCache()
+#     resultado = total.calcula(trampo1_musicos, trampo1_producao, trampo1_som)
+#     print(resultado)

@@ -1,11 +1,11 @@
 from opcoes import Opcoes
 
-class Cache(Opcoes):
-    def __init__(self, quantidade_musicos, valor_cache, km_total):
-        super().__init__()
+class Cache:
+    def __init__(self, quantidade_musicos, valor_cache, km_total, opcoes):
         self.__quantidade_musicos = quantidade_musicos
         self.__valor_cache = valor_cache
         self.km_total = km_total
+        self._opcoes = opcoes
 
         self.__pedagios = []
         self.__carros = self.numero_carros()
@@ -15,7 +15,7 @@ class Cache(Opcoes):
         return (f"Quantidade de musicos: {self.__quantidade_musicos}\n"
                 f"Cache Individual: {self.__valor_cache}\n"
                 f"Distancia a percorrer: {self.km_total}km\n"
-                f"Valor alimentacao individual: {self.valor_alimentacao}\n"
+                f"Valor alimentacao individual: {self._opcoes.valor_alimentacao}\n"
                 f"Pedágios: {self.__pedagios}\n"
                 f"Quantidade de Carros: {self.__carros}")
 
@@ -44,7 +44,7 @@ class Cache(Opcoes):
         return self.__pedagios
 
     def gastos_combustivel(self):
-        combustivel = self.km_total / self.km_por_litro
+        combustivel = self.km_total / self._opcoes.km_por_litro
         if combustivel < 50:
             return 50
         else:
@@ -63,5 +63,5 @@ class Cache(Opcoes):
     def total(self):
         combustivel = self.__carros * self.gastos_combustivel()
         cache = self.__quantidade_musicos * self.__valor_cache
-        resultado = combustivel + self.valor_alimentacao + cache + sum(self.pedagios)
+        resultado = combustivel + self._opcoes.valor_alimentacao + cache + sum(self.pedagios)
         return resultado
